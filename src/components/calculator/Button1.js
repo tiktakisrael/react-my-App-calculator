@@ -8,6 +8,10 @@ const theme = {
     blue:{
         default:'#2196f3',
         hover:'#1976d2'
+    },
+    red:{
+        default:'red',
+        hover:'red'
     }
 }
 const Button = styled.button`
