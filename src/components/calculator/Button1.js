@@ -17,34 +17,37 @@ const theme = {
 const Button = styled.button`
 margin: 3px 3px;
 font-size: 30px;
+padding: 10px;
+height: 60px;
+width: 80px;
+box-sizing: border-box;
 background-color: ${props => theme[props.theme].default};
 color: white;
-padding: 20px 20px 20px 20px;
 border-radius: 15px;
 outline: 0;
 box-shadow: 0px 2px 2px lightgray;
 text-transform: uppercase;
 cursor: pointer;
 transition: ease background-color 250ms;
-display: inline-block;
 font-weight: bold;
 &:hover{
     transform: translateY(-3px);
     background-color: ${props => theme[props.theme].hover};
 };
+
 &:disable{
     cursor: default;
     opacity: 0.7;
 }
-`
+`;
 Button.defaultProps = {
-    theme:'blue'
-}
+    theme:'red'
+};
 // const themes = function(){
     // Button1.defaultprops[theme] = 'orange';
 // }
 
-    const Button1 = function(props){
+const Button1 = function(props){
     return(
         <div className= {props.char}>
                 <Button  onClick={() => props.onClick(props.char,props.current)}

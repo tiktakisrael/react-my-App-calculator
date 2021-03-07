@@ -1,13 +1,18 @@
+import styled from "styled-components"
 
-
+const RedultDiv = styled.div`
+// display: flex;
+// height:20px;
+// width: 358px;
+`;
 const DisplayResult = function(props){
     return(
-        <div className={'DisplayResult'}>
+        <RedultDiv className={'DisplayResult'}>
             <p >
              {props.result}
             </p>
             
-        </div>
+        </RedultDiv>
     )
 }
 export default DisplayResult

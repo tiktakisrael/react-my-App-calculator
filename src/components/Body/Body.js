@@ -5,6 +5,8 @@ import { NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import Calculator from "components/calculator/calculator";
 import Random from "components/calculator/Random";
+import CreateArticle from "components/article/createArticle";
+
 
 const BodyComponent = function () {
     const showNotification = () => {
@@ -23,8 +25,9 @@ const BodyComponent = function () {
         {/* // </a> */}
         {/* <RenderPoll object ={object1}/> */}
         {/* <Random/> */}
-        {/* <button onClick={showNotification}> show notification</button> */}
-        <Calculator/>
+        <button onClick={showNotification}> show notification</button>
+        <CreateArticle/>
+        {/* <Calculator/> */}
     </header>
     )
 }

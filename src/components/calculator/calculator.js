@@ -2,23 +2,27 @@ import { useState } from "react";
 import CalculatorDisplay from "./CalculatorDisplay";
 import CallBtn from "./CallBtn";
 import { create, all } from 'mathjs';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 const config = { };
 const math = create(all, config);
 
-// const btnStyle = styled.div`
-// `
-// font-size: 30px;
-// color: blue;
+const MainDiv = styled.div`
+background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    height: 550px;
+    width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+`;
 const Calculator = function(){
     
     let [current, setCurrent] = useState('');
     const onClick = (char, current)=>{
-        // console.log(char, current);
         char === '.' && result === math.evaluate(current) && current[current.length-1] !== 0?
         setCurrent(current = result + String(char)):
         setCurrent(current += char);
-        // console.log(char,current); 
     };
 
     let [result, setResult] = useState(0);
@@ -55,7 +59,6 @@ const Calculator = function(){
         isValid(char, current) && displayResult();
     }
     const btnPMCH = (char, current)=>{
-        // console.log(char,current);
        (current[current.length-1] === '+' ||
         current[current.length-1] === '-' ||
         current[current.length-1] === '*' ||
@@ -69,9 +72,10 @@ const Calculator = function(){
     }
     // {onClick:onClick,char:'(',color:'yellow'},{onClick:onClick,char:')',color:'yellow'},{onClick:onClick,char:'^',color:'yellow'},{onClick:onClick,char:'.',color:'yellow'},
     const array = [
-    {onClick:cencel1,char:'c1',color:'#dcedc8'},
-    {onClick:cencel,char:'c',color:'#f0f4c3'},
-    {onClick:btnE,char:'=',color:'white'},
+    {onClick:btnPMCH,char:'+',color:'#69f0ae'},
+    {onClick:btnPMCH,char:'-',color:'#69f0ae'},
+    {onClick:btnPMCH,char:'*',color:'#69f0ae'},
+    {onClick:btnPMCH,char:'/',color:'#69f0ae'},
     {onClick:onClick,char:0,color:'#ffcdd2'},
     {onClick:onClick,char:1,color:'#f8bbd0'},
     {onClick:onClick,char:2,color:'#e1bee7'},
@@ -82,15 +86,17 @@ const Calculator = function(){
     {onClick:onClick,char:7,color:'#b2ebf2'},
     {onClick:onClick,char:8,color:'#b2dfdb'},
     {onClick:onClick,char:9,color:'#c8e6c9'},
-    {onClick:btnPMCH,char:'+',color:'#69f0ae'},
-    {onClick:btnPMCH,char:'-',color:'#69f0ae'},
-    {onClick:btnPMCH,char:'*',color:'#69f0ae'},
-    {onClick:btnPMCH,char:'/',color:'#69f0ae'}];
+    {onClick:cencel1,char:'c1',color:'#dcedc8'},
+    {onClick:cencel,char:'c',color:'#f0f4c3'},
+    {onClick:btnE,char:'=',color:'white'},
+    {onClick:onClick,char:'^',color:'yellow'},
+    {onClick:onClick,char:'.',color:'yellow'}];
+    
     return(
-        <div>
-            <CallBtn array= {array} current={current} />
+        <MainDiv>
             <CalculatorDisplay  displayResult={displayResult} current={current} result={result}/> 
-        </div>
+            <CallBtn array= {array} current={current} />
+        </MainDiv>
     )
 }
 export default Calculator;
