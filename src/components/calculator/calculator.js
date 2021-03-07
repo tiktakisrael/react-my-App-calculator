@@ -7,7 +7,7 @@ const config = { };
 const math = create(all, config);
 
 const MainDiv = styled.div`
-background-color: white;
+    background-color: white;
     display: flex;
     flex-direction: column;
     border: 1px solid black;

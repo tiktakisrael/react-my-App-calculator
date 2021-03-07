@@ -25,7 +25,7 @@ const BodyComponent = function () {
         {/* // </a> */}
         {/* <RenderPoll object ={object1}/> */}
         {/* <Random/> */}
-        <button onClick={showNotification}> show notification</button>
+        {/* <button onClick={showNotification}> show notification</button> */}
         <CreateArticle/>
         {/* <Calculator/> */}
     </header>
