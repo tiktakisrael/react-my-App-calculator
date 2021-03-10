@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post('/', (req, res) => {
-  console.log(req.body, req.);
+  console.log(req.body, req.header);
   res.json(req.body);
 });
 

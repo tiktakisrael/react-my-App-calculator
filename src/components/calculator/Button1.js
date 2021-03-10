@@ -41,7 +41,7 @@ font-weight: bold;
 }
 `;
 Button.defaultProps = {
-    theme:'red'
+    theme:'blue'
 };
 // const themes = function(){
     // Button1.defaultprops[theme] = 'orange';
